@@ -1,0 +1,6 @@
+C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net6.0\WebApi.csproj.AssemblyReference.cache
+C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net6.0\WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfoInputs.cache
+C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfo.cs
+C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net6.0\WebApi.csproj.CoreCompileInputs.cache
+C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net6.0\WebApi.MvcApplicationPartsAssemblyInfo.cache
