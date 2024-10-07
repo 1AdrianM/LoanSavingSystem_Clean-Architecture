@@ -8,10 +8,10 @@ namespace Infrastructure.Repositories
 {
     class ClienteRepositoryImplementation : IClienteRepository
     {
-        private readonly Loan_DbContext _DbContext;
+        private readonly AhorrosPrestamosDb2Context _DbContext;
         public IUnitOfWork UnitOfWork => _DbContext;
 
-        public ClienteRepositoryImplementation(Loan_DbContext DbContext)
+        public ClienteRepositoryImplementation(AhorrosPrestamosDb2Context DbContext)
         {
              _DbContext = DbContext?? throw new ArgumentException(nameof(DbContext)) ;
         }
@@ -41,11 +41,16 @@ namespace Infrastructure.Repositories
 
         public async Task<Domain.Entities.Cliente.Cliente> GetClientById(int id)
         {
-            var Client = await _DbContext.Clientes.AsNoTracking().FirstOrDefaultAsync(c=>c.ClientId==id);
- 
+            var Client = await _DbContext.Clientes.AsNoTracking().FirstOrDefaultAsync(c => c.ClientId == id);
 
-            return ClienteMapper.ToDomainModel(Client);
-
+            if (Client != null)
+            {
+                return ClienteMapper.ToDomainModel(Client);
+            }
+            else
+            {
+                throw new ClientNotFoundException(id);
+            }
 
         }
 

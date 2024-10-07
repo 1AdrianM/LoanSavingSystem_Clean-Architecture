@@ -10,7 +10,7 @@ public static class ClienteMapper
         Console.WriteLine(domainCliente.TipoCliente);
         var clientEF = new Infrastructure.Persistence.Models.Cliente
         {
-            ClientId = 0,
+            ClientId = domainCliente.ClientId,
             Cedula = domainCliente.Cedula,
             Nombre = domainCliente.Nombre,
             Email = domainCliente.Email,

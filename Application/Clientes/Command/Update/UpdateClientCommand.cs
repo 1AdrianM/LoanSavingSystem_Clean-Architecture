@@ -8,19 +8,17 @@ using System.Threading.Tasks;
 namespace Application.Clientes.Command.Update
 {
     public record UpdateClientCommand(
-        int id,
-        string Cedula,
+    int id,
+    string Cedula,
     string Nombre,
     string Apellidos,
     string Email,
-
     string Telefono,
     string TipoCliente,
     string Street,
-   string City,
+    string City,
     string State,
-    string Country
-        ) :IRequest;
+    string Country):IRequest;
 
     public record UpdateClientRequest(
  

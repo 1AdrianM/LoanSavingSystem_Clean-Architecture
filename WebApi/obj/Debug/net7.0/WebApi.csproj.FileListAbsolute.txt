@@ -87,7 +87,6 @@ C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escrito
 C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net7.0\scopedcss\bundle\WebApi.styles.css
-C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net7.0\WebApi.csproj.CopyComplete
 C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net7.0\WebApi.dll
 C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net7.0\refint\WebApi.dll
 C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net7.0\WebApi.pdb
@@ -95,3 +94,4 @@ C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escrito
 C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net7.0\ref\WebApi.dll
 C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
 C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net7.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\CHINO\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Escritorio\Projects Files\.NET\LoanSavingSystem\WebApi\obj\Debug\net7.0\WebApi.csproj.CopyComplete

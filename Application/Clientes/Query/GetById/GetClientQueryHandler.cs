@@ -27,11 +27,8 @@ namespace Application.Clientes.Query.Get
             var client = await _clienteRepository.GetClientById(request.ClientId);
             Console.WriteLine("Query Executed. Checking if client is null.");
 
-            if (client == null)
-            {
-                return null; // O lanzar una excepción personalizada
-            }
-            var clientL = new ClientReponse (client.ClientId, client.Cedula, client.Nombre, client.Apellidos,client.Email, client.TipoCliente, client.Direccion, client.Telefono) ;
+          
+            var clientL = new ClientReponse (client.ClientId, client.Cedula, client.Nombre, client.Apellidos,client.Email,client.Telefono, client.TipoCliente, client.Direccion ) ;
             return clientL;
         }
     }

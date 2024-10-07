@@ -60,14 +60,17 @@ namespace Domain.Entities.Cliente
                                direccion);
         }
 
-        public void Update(string cedula, string nombre, string apellidos, string email, string telefono, TipoCliente tipoCliente, Direccion direccion)
+        public void Update(string cedula, string nombre, string apellidos, string email, string telefono, string tipoCliente, Direccion direccion)
         {
+            TipoCliente newTipoCliente = ParseTipoCliente(tipoCliente);
+
             Cedula = cedula;
             Nombre = nombre;
             Apellidos = apellidos;
             Email = email;
             Telefono = telefono;
-            TipoCliente = tipoCliente;
+            TipoCliente = newTipoCliente;
+
             Direccion = direccion;
         }
             // Método de validación de datos

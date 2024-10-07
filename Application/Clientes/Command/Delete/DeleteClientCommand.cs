@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 
 namespace Application.Clientes.Command.Delete
 {
-    public record DeleteClientCommand(int ClientId):IRequest;
+    public record DeleteClientCommand(int Id):IRequest;
 }

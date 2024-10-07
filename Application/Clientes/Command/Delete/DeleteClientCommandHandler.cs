@@ -23,13 +23,11 @@ namespace Application.Clientes.Command.Delete
     public async Task Handle(DeleteClientCommand request, CancellationToken cancellationToken)
         {
            
-            var cliente = await _clienteRepository.GetClientById(request.ClientId);
-
-            if (cliente != null)
-            {
+            var cliente = await _clienteRepository.GetClientById(request.Id);
+            
          _clienteRepository.Delete(cliente);
             await _unitOfWork.CompletedAsync(cancellationToken);
-            }
+            
             
 
         }

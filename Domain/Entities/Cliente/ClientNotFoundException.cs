@@ -8,8 +8,8 @@ namespace Domain.Entities.Cliente
         {
 
         }
-        public ClientNotFoundException(ClientId id)
-        : base($"The product with the ID = {id.id} was not found")
+        public ClientNotFoundException(int id)
+        : base($"The product with the ID = {id} was not found")
         {
         }
 

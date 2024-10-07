@@ -13,11 +13,11 @@ namespace Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration) {
 
-          services.AddDbContext<Loan_DbContext>(options =>
+          services.AddDbContext<AhorrosPrestamosDb2Context>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DbConn")));
              //.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery));
 
-            services.AddScoped<IUnitOfWork>(unit=> unit.GetRequiredService<Loan_DbContext>());
+            services.AddScoped<IUnitOfWork>(unit=> unit.GetRequiredService<AhorrosPrestamosDb2Context>());
 
             services.AddScoped<IClienteRepository, ClienteRepositoryImplementation>();
             return services;

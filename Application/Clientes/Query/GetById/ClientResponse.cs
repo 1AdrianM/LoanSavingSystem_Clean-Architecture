@@ -28,14 +28,17 @@ namespace Application.Clientes.Query.Get
     [EmailAddress(ErrorMessage = "Debe ser un email válido.")]
     string Email,
 
+       [RegularExpression(@"^\d{10}$", ErrorMessage = "El teléfono debe tener 10 dígitos.")]
+    string Telefono,
+
     [Required(ErrorMessage = "Debe ser un tipo de cliente válido.")]
     TipoCliente TipoCliente,
 
     [Required(ErrorMessage = "El campo Dirección es obligatorio.")]
-    Direccion Direccion,
+    Direccion Direccion
 
-    [RegularExpression(@"^\d{10}$", ErrorMessage = "El teléfono debe tener 10 dígitos.")]
-    string Telefono) : IRequest
+ 
+        ) : IRequest
     {
        
 

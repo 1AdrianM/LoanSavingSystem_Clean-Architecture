@@ -106,10 +106,10 @@ namespace WebApi.Endpoints.Client
                         id,
                         req.Cedula,
                         req.Nombre,
-                        req.Apellidos
-                        ,req.Email
-                        ,req.Telefono
-                        ,req.TipoCliente,
+                        req.Apellidos,
+                        req.Email,
+                        req.Telefono,
+                        req.TipoCliente,
                         req.Street,
                         req.City,
                         req.State,

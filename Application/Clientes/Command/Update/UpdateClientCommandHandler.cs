@@ -21,13 +21,15 @@ namespace Application.Clientes.Command.Update
 
         public async Task Handle(UpdateClientCommand request, CancellationToken cancellationToken)
         {      var client = await _clienteRepository.GetClientById(request.id);
-               client.Update(client.Cedula,
-                   client.Nombre,
-                   client.Apellidos,
-                   client.Email, 
-                   client.Telefono, 
-                   client.TipoCliente,
-                   client.Direccion);
+        
+            var direccion = new Direccion(request.Street, request.City, request.State, request.Country);
+               client.Update(request.Cedula,
+                   request.Nombre,
+                   request.Apellidos,
+                   request.Email, 
+                   request.Telefono, 
+                   request.TipoCliente,
+                   direccion);
          
             _clienteRepository.Update(client);
 

@@ -16,14 +16,11 @@ namespace Application.Clientes.Command.Create
         }
        public async Task Handle(CreateClientCommand request, CancellationToken cancellationToken)
         {
-            
-            Console.WriteLine("Llmando command handler");
-
             try
             { var direccion = Direccion.Create(request.Street, request.City, request.State, request.Country);
 
                 var client = Cliente.Create(
-                 request.ClientId,
+                 0,
                     request.Cedula,
                     request.Nombre,
                     request.Apellidos,
@@ -32,12 +29,10 @@ namespace Application.Clientes.Command.Create
                     request.TipoCliente,
                     direccion: direccion
                     );
-                Console.WriteLine(client);
-                Console.WriteLine("Adding command handler");
+            
 
                 _clienteRepository.Add(client);
-                Console.WriteLine("Unit of work command handler");
-
+ 
                 await _unitOfWork.CompletedAsync(cancellationToken);
             }
             catch (ArgumentNullException ex)
