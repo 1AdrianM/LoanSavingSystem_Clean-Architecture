@@ -7,8 +7,6 @@ public partial class Garantium
 {
     public int GarantiaId { get; set; }
 
-    public int CodigoGarantia { get; set; }
-
     public string? TipoGarantia { get; set; }
 
     public decimal? Valor { get; set; }

@@ -212,14 +212,14 @@ public partial class AhorrosPrestamosDb2Context : DbContext,IUnitOfWork
 
         modelBuilder.Entity<Garantium>(entity =>
         {
-            entity.HasKey(e => e.GarantiaId).HasName("PK__Garantia__F036CD30A87354FB");
+            entity.HasKey(e => e.GarantiaId).HasName("PK__Garantia__F036CD304D314698");
 
-            entity.HasIndex(e => e.CodigoGarantia, "UQ__Garantia__712CC185AA793DE9").IsUnique();
+        
 
             entity.Property(e => e.GarantiaId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("garantia_id");
-            entity.Property(e => e.CodigoGarantia).HasColumnName("codigo_garantia");
+          
             entity.Property(e => e.TipoGarantia)
                 .HasMaxLength(40)
                 .IsUnicode(false)
@@ -366,14 +366,14 @@ public partial class AhorrosPrestamosDb2Context : DbContext,IUnitOfWork
                                 .OnDelete(DeleteBehavior.ClientSetNull);
 
         });
-        modelBuilder.Entity<Cliente>()
+      /*  modelBuilder.Entity<Cliente>()
          .Navigation(c => c.Prestatarios).AutoInclude();
         modelBuilder.Entity<Cliente>()
             .Navigation(c => c.Inversionista).AutoInclude();
         modelBuilder.Entity<Cliente>()
             .Navigation(c => c.Fiador).AutoInclude();
         OnModelCreatingPartial(modelBuilder);
-    }
+    */}
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

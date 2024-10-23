@@ -1,20 +1,16 @@
 ﻿using Domain.Entities.Cliente;
 using MediatR;
 using Application.SeedOfWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+ 
 
 namespace Application.Clientes.Command.Delete
 {
     public class DeleteClientCommandHandler : IRequestHandler<DeleteClientCommand>
     {
 
-        private readonly IClienteRepository _clienteRepository;
+        private readonly ICliente _clienteRepository;
         private readonly IUnitOfWork _unitOfWork;
-        public DeleteClientCommandHandler(IClienteRepository clienteRepository, IUnitOfWork unitOfWork)
+        public DeleteClientCommandHandler(ICliente clienteRepository, IUnitOfWork unitOfWork)
         {
             _clienteRepository = clienteRepository;
             _unitOfWork = unitOfWork;
@@ -25,7 +21,7 @@ namespace Application.Clientes.Command.Delete
            
             var cliente = await _clienteRepository.GetClientById(request.Id);
             
-         _clienteRepository.Delete(cliente);
+                 _clienteRepository.Delete(cliente);
             await _unitOfWork.CompletedAsync(cancellationToken);
             
             

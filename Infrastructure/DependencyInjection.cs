@@ -6,6 +6,10 @@ using Infrastructure.Persistence;
 using Domain.Entities.Cliente;
 using Infrastructure.Repositories;
 using Application.SeedOfWork;
+using Domain.Entities.Prestamo;
+using Domain.Entities.Garantia;
+using Domain.Entities.Prestatario;
+using Domain.Entities.CuotaPrestamo;
 
 namespace Infrastructure
 {
@@ -13,13 +17,17 @@ namespace Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration) {
 
-          services.AddDbContext<AhorrosPrestamosDb2Context>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DbConn")));
-             //.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery));
+            services.AddDbContext<AhorrosPrestamosDb2Context>(options =>
+              options.UseSqlServer(configuration.GetConnectionString("DbConn")));
+            //.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery));
 
-            services.AddScoped<IUnitOfWork>(unit=> unit.GetRequiredService<AhorrosPrestamosDb2Context>());
+            services.AddScoped<IUnitOfWork>(unit => unit.GetRequiredService<AhorrosPrestamosDb2Context>());
 
-            services.AddScoped<IClienteRepository, ClienteRepositoryImplementation>();
+            services.AddScoped<ICliente, ClienteRepository>();
+            services.AddScoped<IPrestamo, PrestamoRepository>();
+            services.AddScoped<IGarantia, GarantiaRepository>();
+            services.AddScoped<IPrestatario, PrestatarioRepository>();
+            services.AddScoped<ICuotaPrestamo, CuotaPrestamoRepository>();
             return services;
         }
     }

@@ -18,15 +18,16 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
               "C:\\Users\\CHINO\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Escritorio\\Projects Files\\.NET\\LoanSavingSystem\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\CHINO\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Escritorio\\Projects Files\\.NET\\LoanSavingSystem\\Domain\\Domain.csproj"
@@ -38,11 +39,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Carter": {
               "target": "Package",
@@ -85,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -103,15 +109,16 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -119,11 +126,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Carter": {
               "target": "Package",
@@ -166,7 +178,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -184,24 +196,22 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
               "C:\\Users\\CHINO\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Escritorio\\Projects Files\\.NET\\LoanSavingSystem\\Application\\Application.csproj": {
                 "projectPath": "C:\\Users\\CHINO\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Escritorio\\Projects Files\\.NET\\LoanSavingSystem\\Application\\Application.csproj"
               },
               "C:\\Users\\CHINO\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Escritorio\\Projects Files\\.NET\\LoanSavingSystem\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\CHINO\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Escritorio\\Projects Files\\.NET\\LoanSavingSystem\\Domain\\Domain.csproj"
-              },
-              "C:\\Users\\CHINO\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Escritorio\\Projects Files\\.NET\\LoanSavingSystem\\Presentation\\Presentation.csproj": {
-                "projectPath": "C:\\Users\\CHINO\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Escritorio\\Projects Files\\.NET\\LoanSavingSystem\\Presentation\\Presentation.csproj"
               }
             }
           }
@@ -210,11 +220,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Carter": {
               "target": "Package",
@@ -271,88 +286,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\CHINO\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Escritorio\\Projects Files\\.NET\\LoanSavingSystem\\Presentation\\Presentation.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\CHINO\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Escritorio\\Projects Files\\.NET\\LoanSavingSystem\\Presentation\\Presentation.csproj",
-        "projectName": "Presentation",
-        "projectPath": "C:\\Users\\CHINO\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Escritorio\\Projects Files\\.NET\\LoanSavingSystem\\Presentation\\Presentation.csproj",
-        "packagesPath": "C:\\Users\\CHINO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CHINO\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Escritorio\\Projects Files\\.NET\\LoanSavingSystem\\Presentation\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\CHINO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "dependencies": {
-            "Carter": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "FluentValidation.DependencyInjectionExtensions": {
-              "target": "Package",
-              "version": "[11.10.0, )"
-            },
-            "MediatR": {
-              "target": "Package",
-              "version": "[12.4.1, )"
-            },
-            "Serilog": {
-              "target": "Package",
-              "version": "[4.0.0, )"
-            },
-            "Serilog.Extensions.Hosting": {
-              "target": "Package",
-              "version": "[4.0.0, )"
-            },
-            "Serilog.Sinks.Console": {
-              "target": "Package",
-              "version": "[4.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

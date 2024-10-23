@@ -3,6 +3,7 @@ using Carter;
 using Domain;
 using Infrastructure;
 using LoanSavingSystem.API.Middlewares;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -18,7 +19,6 @@ builder.Host.UseSerilog();
 
 builder.Logging.AddConsole();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen();
 
 
@@ -36,6 +36,20 @@ builder.Services.AddCors(options =>
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddCarter();
+// Add API versioning
+/*builder.Services.AddApiVersioning(options =>
+{
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.ReportApiVersions = true;
+});
+
+// Group API versions in Swagger
+builder.Services.AddVersionedApiExplorer(options =>
+{
+    options.GroupNameFormat = "'v'VVV"; // 'v1', 'v2', etc.
+    options.SubstituteApiVersionInUrl = true;
+});*/
 
 var app = builder.Build();
 // Configurar Serilog
@@ -48,9 +62,9 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = string.Empty;
 
         
-
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-   }) ;
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
+        c.SwaggerEndpoint("/swagger/v2/swagger.json", "API v2");
+    }) ;
     
 }
 app.Use(async (context, next) =>

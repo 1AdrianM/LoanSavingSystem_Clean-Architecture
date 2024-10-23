@@ -11,9 +11,9 @@ namespace Application.Clientes.Command.Update
 {
     internal class UpdateClientCommandHandler : IRequestHandler<UpdateClientCommand>
     {
-        private readonly IClienteRepository _clienteRepository;
+        private readonly ICliente _clienteRepository;
         private readonly IUnitOfWork _unitOfWork;
-        public UpdateClientCommandHandler(IClienteRepository clienteRepository, IUnitOfWork unitOfWork)
+        public UpdateClientCommandHandler(ICliente clienteRepository, IUnitOfWork unitOfWork)
         {
             _clienteRepository = clienteRepository;
             _unitOfWork = unitOfWork;

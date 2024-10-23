@@ -36,8 +36,7 @@ namespace Application.Clientes.Query.Get
 
     [Required(ErrorMessage = "El campo Dirección es obligatorio.")]
     Direccion Direccion
-
- 
+  
         ) : IRequest
     {
        

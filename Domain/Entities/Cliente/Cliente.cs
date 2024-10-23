@@ -19,7 +19,9 @@ namespace Domain.Entities.Cliente
 
         public Direccion Direccion {get; private set;}
         public string Telefono { get; private set; }
-
+        public int Prestatario { get; private set; }
+        public int Fiadors { get; private set; }
+        public int Inversionista { get; private set; }
         public TipoCliente TipoCliente { get; private set; }
 
 
@@ -36,7 +38,21 @@ namespace Domain.Entities.Cliente
 
         }
 
-      
+        public Cliente(int clientId, string cedula, string nombre, string apellidos, string email, string telefono, TipoCliente tipoCliente, Direccion direccion, int prestatario, int inversionista, int fiadors)
+        {
+            ClientId = clientId;
+            Cedula = cedula;
+            Nombre = nombre;
+            Apellidos = apellidos;
+            Email = email;
+
+            Telefono = telefono;
+            TipoCliente = tipoCliente;
+            Direccion = direccion;
+            Prestatario = prestatario;
+                Inversionista = inversionista;
+            Fiadors = fiadors;
+        }
 
         // Método estático de registro (fábrica) para crear una instancia de Cliente
 
@@ -59,7 +75,26 @@ namespace Domain.Entities.Cliente
                                newTipoCliente,
                                direccion);
         }
+        public static Cliente Map(int clientId, string cedula, string nombre, string apellidos, string email, string telefono, string tipoCliente, Direccion direccion)
+        {
+            ValidarDatos(nombre, apellidos, email, telefono);
 
+            if (direccion == null || string.IsNullOrEmpty(tipoCliente) || string.IsNullOrEmpty(cedula) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellidos) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(telefono))
+            {
+                throw new ArgumentException("son obligatorios para registrar un cliente.");
+            }
+            TipoCliente newTipoCliente = ParseTipoCliente(tipoCliente);
+
+            return new Cliente(clientId,
+                               cedula,
+                               nombre,
+                               apellidos,
+                               email,
+                               telefono,
+                               newTipoCliente,
+                               direccion
+                               );
+        }
         public void Update(string cedula, string nombre, string apellidos, string email, string telefono, string tipoCliente, Direccion direccion)
         {
             TipoCliente newTipoCliente = ParseTipoCliente(tipoCliente);

@@ -12,8 +12,8 @@ namespace Application.Clientes.Query.Get
     internal class GetClientQueryHandler : IRequestHandler<GetClientQuery, ClientReponse>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IClienteRepository _clienteRepository;
-        public GetClientQueryHandler(IClienteRepository clienteRepository, IUnitOfWork unitOfWork)
+        private readonly ICliente _clienteRepository;
+        public GetClientQueryHandler(ICliente clienteRepository, IUnitOfWork unitOfWork)
         {
             _clienteRepository = clienteRepository;
             _unitOfWork = unitOfWork;
@@ -28,7 +28,7 @@ namespace Application.Clientes.Query.Get
             Console.WriteLine("Query Executed. Checking if client is null.");
 
           
-            var clientL = new ClientReponse (client.ClientId, client.Cedula, client.Nombre, client.Apellidos,client.Email,client.Telefono, client.TipoCliente, client.Direccion ) ;
+            var clientL = new ClientReponse (client.ClientId, client.Cedula, client.Nombre, client.Apellidos,client.Email,client.Telefono, client.TipoCliente, client.Direccion) ;
             return clientL;
         }
     }

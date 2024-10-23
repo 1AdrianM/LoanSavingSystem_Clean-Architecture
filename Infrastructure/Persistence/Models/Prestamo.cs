@@ -21,7 +21,7 @@ public partial class Prestamo
 
     public DateTime? FechaInicio { get; set; }
 
-    public DateTime? FechaTermino { get; set; }
+    public DateTime? FechaTermino { get; set; }   
 
     public decimal? Monto { get; set; }
 

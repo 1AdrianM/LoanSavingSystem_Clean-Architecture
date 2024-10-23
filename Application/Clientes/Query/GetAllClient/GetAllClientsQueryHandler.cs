@@ -13,8 +13,8 @@ namespace Application.Clientes.Query.GetAllClient
     internal class GetAllClientsQueryHandler : IRequestHandler<GetAllClientQuery, List<ClientListResponse>>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IClienteRepository _clienteRepository;
-        public GetAllClientsQueryHandler(IClienteRepository clienteRepository, IUnitOfWork unitOfWork)
+        private readonly ICliente _clienteRepository;
+        public GetAllClientsQueryHandler(ICliente clienteRepository, IUnitOfWork unitOfWork)
         {
             _clienteRepository = clienteRepository;
             _unitOfWork = unitOfWork;
@@ -25,9 +25,17 @@ namespace Application.Clientes.Query.GetAllClient
         {
             var clientList = await _clienteRepository.GetAll();
 
-            var newlist = clientList.Select(p => new ClientListResponse(p.ClientId, p.Cedula, p.Nombre, p.Apellidos, p.Email, p.TipoCliente, p.Direccion, p.Telefono)).ToList();
-             return newlist;
 
+            return clientList.Select(p => new ClientListResponse(p.ClientId,
+                p.Cedula,
+                p.Nombre,
+                p.Apellidos,
+                p.Email,
+                p.TipoCliente,
+                p.Direccion,
+                p.Telefono
+                )).ToList();
+              
 
         }
     }

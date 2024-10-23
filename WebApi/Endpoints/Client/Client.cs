@@ -18,7 +18,7 @@ namespace WebApi.Endpoints.Client
     {
         public void AddRoutes(IEndpointRouteBuilder app)
         {
-            var api = app.MapGroup("api/clients/");
+            var api = app.MapGroup("api/v1/clients/").WithTags("Cliente");
 
             api.MapGet("/health", () => Results.Ok(new { Status = "Healthy", Timestamp = DateTime.UtcNow }));
 
@@ -52,35 +52,10 @@ namespace WebApi.Endpoints.Client
                     Console.WriteLine($"ArgumentNullException: {ex.Message}");
                     return Results.BadRequest($"Argument error: {ex.Message}");
                 }
-                catch (InvalidOperationException ex)
-                {
-                    Console.WriteLine($"InvalidOperationException: {ex.Message}");
-                    return Results.StatusCode(500);
-                }
-                catch (Exception ex)
-                {
-                    // Manejo de excepción genérico para cualquier error no específico
-                    Console.WriteLine($"Exception: {ex.Message} - StackTrace: {ex.StackTrace}");
-                    return Results.StatusCode(500);
-                }
-
-            });
-            api.MapGet("get/{id:int}", async (int id, ISender sender) =>
-            {
-                Console.WriteLine("Sending request GET");
-
-                try
-                {
-
-                    return Results.Ok(await sender.Send(new GetClientQuery(id)));
-                }
-                catch (ClientNotFoundException e)
-                {
-                    Console.WriteLine(e.Message);
-                    return Results.NotFound(e.Message);
-
-                }
-            }); 
+            }
+                ); 
+        
+        
          
             api.MapDelete("delete/{id:int}", async (int id, ISender sender) =>
             {
@@ -120,22 +95,23 @@ namespace WebApi.Endpoints.Client
                 }
                 catch (ClientNotFoundException e)
                 {
+                    Log.Error(e.Message);
 
                     return Results.NotFound(e.Message);
                 }
             });
             api.MapGet("get/clientlist", async ( ISender sender) =>
             {
-                Console.WriteLine("Sending request GET");
 
                 try
                 {
-                   ;
+                    Log.Information("Sending request GET");
+
                     return Results.Ok( await sender.Send(new GetAllClientQuery ()));
                 }
                 catch (ClientNotFoundException e)
                 {
-                    Console.WriteLine(e.Message);
+                    Log.Error(e.Message);
                     return Results.NotFound(e.Message);
 
                 }

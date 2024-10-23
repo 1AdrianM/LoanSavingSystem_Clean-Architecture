@@ -7,9 +7,9 @@ namespace Application.Clientes.Command.Create
 {
     internal class CreateClientCommandHandler : IRequestHandler<CreateClientCommand>
     {
-        private readonly IClienteRepository _clienteRepository;
+        private readonly ICliente _clienteRepository;
         private readonly IUnitOfWork _unitOfWork;
-        public CreateClientCommandHandler(IClienteRepository clienteRepository, IUnitOfWork unitOfWork) {
+        public CreateClientCommandHandler(ICliente clienteRepository, IUnitOfWork unitOfWork) {
             _clienteRepository = clienteRepository;
             _unitOfWork = unitOfWork;
         
@@ -20,7 +20,7 @@ namespace Application.Clientes.Command.Create
             { var direccion = Direccion.Create(request.Street, request.City, request.State, request.Country);
 
                 var client = Cliente.Create(
-                 0,
+                        0,
                     request.Cedula,
                     request.Nombre,
                     request.Apellidos,

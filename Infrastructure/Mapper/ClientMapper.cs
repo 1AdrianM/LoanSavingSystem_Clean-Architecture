@@ -1,4 +1,5 @@
 ﻿using Domain.Entities.Cliente;
+using Infrastructure.Mapper;
 using Infrastructure.Persistence.Models;
 using Microsoft.IdentityModel.Tokens;
 
@@ -39,21 +40,27 @@ public static class ClienteMapper
 
 public static Domain.Entities.Cliente.Cliente ToDomainModel(Infrastructure.Persistence.Models.Cliente efCliente)
     {
-        Console.WriteLine("INICIO DE MAPPING DOMAIN MODEL");
 
-        Direccion ObjDir =EfDireccionToDomainDireccion(direccion: efCliente.Direccion);
+        if (efCliente == null)
+            throw new ArgumentNullException(nameof(efCliente));
+
+        Direccion ObjDir = EfDireccionToDomainDireccion(efCliente.Direccion);
+
         var tipoCliente = InferTipoCliente(efCliente);
-        Console.WriteLine("Mapping Domain model");
+        Console.WriteLine($"Cliente {efCliente.ClientId}: Prestatarios count = {efCliente.Prestatarios.Count()}, Inversionistas count = {efCliente.Inversionista.Count()}, Fiador = {efCliente.Fiador != null}");
 
-        return Domain.Entities.Cliente.Cliente.Create(
+
+       
+
+        return Domain.Entities.Cliente.Cliente.Map(
             efCliente.ClientId,
             efCliente.Cedula,
             efCliente.Nombre,
             efCliente.Apellido,
             efCliente.Email ?? "",
             efCliente.Telefono,
-            tipoCliente.ToString(), // Replace with actual logic to get TipoCliente
-            ObjDir // Adjust as necessary
+            tipoCliente.ToString(),
+            ObjDir 
         );
     }
 
@@ -79,12 +86,12 @@ public static Domain.Entities.Cliente.Cliente ToDomainModel(Infrastructure.Persi
         }else
             throw new ArgumentException("No se pudo inferir el tipo de cliente a partir del modelo EF.");
     }
-    public static (Prestatario? prestatario, Inversionistum? inversionista, Fiador? fiador) ClientTypeSelector(Domain.Entities.Cliente.Cliente domainCliente, Infrastructure.Persistence.Models.Cliente clientEF)
+    public static (Infrastructure.Persistence.Models.Prestatario? prestatario, Inversionistum? inversionista, Fiador? fiador) ClientTypeSelector(Domain.Entities.Cliente.Cliente domainCliente, Infrastructure.Persistence.Models.Cliente clientEF)
     {
         return domainCliente.TipoCliente.ToString().ToLower() switch
         {
             "prestatario" => (
-                new Prestatario
+                new Infrastructure.Persistence.Models.Prestatario
                 {
                     PrestatarioId = 0,
                     Client = clientEF,

@@ -35,5 +35,8 @@ namespace Application.Clientes.Query.GetAllClient
     Direccion Direccion,
 
     [RegularExpression(@"^\d{10}$", ErrorMessage = "El teléfono debe tener 10 dígitos.")]
-    string Telefono) : IRequest;
+    string Telefono
+
+
+        ) : IRequest;
 }
